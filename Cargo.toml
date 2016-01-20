@@ -1,0 +1,11 @@
+[package]
+name = "appinfo_download_pics"
+version = "0.1.0"
+authors = ["breakliu <breakliu@tencent.com>"]
+
+[dependencies.hyper]
+git = "https://github.com/hyperium/hyper"
+
+[dependencies]
+regex = "0.1.47"
+url = "0.5.3"

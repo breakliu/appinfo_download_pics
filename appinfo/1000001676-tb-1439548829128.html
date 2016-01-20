@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>九龙战--腾讯第一动作竞技手游</title>
+    <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript">window._points=[+new Date];// 初始测速点</script>
+    <link rel="stylesheet" href="http://wximg.gtimg.com/tmt/weixin-app-template/dist/css/style-templateB.css"/>
+    <script type="text/javascript">window._points[1]=+new Date;// css加载完成</script>
+</head>
+<body style="background-color: #162945;">
+<div class="wraper">
+    <div class="banner" id="J-bannner">
+        <div class="banner__img-wrap">
+            <img class="banner__img" src="http://shp.qpic.cn/wxad/duc2TvpEgST4LPbbFsmPlzqG6ROsibk3kNllQ6KQnBXwe43yFvnAzJzgyCAskVJ7L/0" alt=""/>
+            <div class="app__gradient" style="background:-webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,0)), color-stop(1, #162945));"></div>
+        </div>
+        <div class="banner__main">
+            <div class="app__desc">
+                <img class="app__img" src="http://pp.myapp.com/ma_icon/0/icon_11679110_1439303193/96" alt=""/>
+                <div class="app__text">
+                    <div class="app__name">九龙战--腾讯第一动作竞技手游</div>
+                    <div class="app__other">
+                        <span style="margin-right: 5px;">大小:256M</span>
+                        <span><i class="icon__app"></i>应用宝认证</span>
+                    </div>
+                </div>
+            </div>
+            <a class="ui-button" href="javascript:;" id="download"><i class="icon-loading" style="display:none"></i><span>下载</span></a>
+        </div>
+    </div>
+    <div class="thumb-list">
+        <div class="thumb-list__inner" style="width: 890px;">
+            
+            
+                <div class="thumb-list__item-wrap">
+                    <img class="thumb-list__item" src="http://pp.myapp.com/ma_pic2/0/shot_11679110_1_1439303192/330" alt=""/>
+                </div>
+            
+                <div class="thumb-list__item-wrap">
+                    <img class="thumb-list__item" src="http://pp.myapp.com/ma_pic2/0/shot_11679110_2_1439303192/330" alt=""/>
+                </div>
+            
+                <div class="thumb-list__item-wrap">
+                    <img class="thumb-list__item" src="http://pp.myapp.com/ma_pic2/0/shot_11679110_3_1439303192/330" alt=""/>
+                </div>
+            
+                <div class="thumb-list__item-wrap">
+                    <img class="thumb-list__item" src="http://pp.myapp.com/ma_pic2/0/shot_11679110_4_1439303192/330" alt=""/>
+                </div>
+            
+                <div class="thumb-list__item-wrap">
+                    <img class="thumb-list__item" src="http://pp.myapp.com/ma_pic2/0/shot_11679110_5_1439303192/330" alt=""/>
+                </div>
+            
+        </div>
+    </div>
+    <div class="app__mes">
+        
+            <p>腾讯第一动作竞技手游巨作，由《御龙 在天》原班人马倾力打造。</p>
+        
+            <p>    《九龙战》是腾讯首款3D动作多模式竞技手游。时尚冷硬的画风重塑三国另类恢宏史诗；自由转职的个性角色伴你闯荡6大地貌的浩瀚世界；连击、防反、目押、QTE，多样化操作铸就酣畅爽快的动作体验；单挑、MOBA、乱斗、公会战，多模式竞技玩法全方位诠释绝命厮杀的战斗情怀！ </p>
+        
+            <p>    把热血沙场装进口袋，战——就要这么痛快！</p>
+        
+    </div>
+</div>
+
+<div class="video-wrap" style="display: none;background-color:rgba(0,0,0,.8);">
+    <div class="video-holder" id="mod_player" style="width: 300px; height: 160px; margin-left: -150px; margin-top: -80px;"></div>
+</div>
+<script type="text/javascript">window._points[2]=+new Date;// dom加载完成</script>
+<script src="http://wximg.gtimg.com/tmt/weixin-app-template/dist/js/zepto_modify.js"></script>
+<script src="http://mp.weixin.qq.com/promotion/res/htmledition/appinfo/lib/wxdownload.js"></script>
+<script src="http://mp.weixin.qq.com/promotion/res/htmledition/appinfo/lib/speed.js"></script>
+<script src="http://pingjs.qq.com/tcss.ping.js"></script>
+<script type="text/javascript">
+    var CONFIG = {
+        videoID: "f0162w58wwe"
+    };
+</script>
+<script>
+    var $thumbList = $('.thumb-list__item'),
+        curUrl = '',
+        urlList = [];
+
+    $thumbList.each(function(){
+         urlList.push($(this).attr('src'));
+    });
+
+    $thumbList.on('tap', function(){
+        curUrl = $(this).attr('src');
+        weixinPreview();
+    });
+
+    function weixinPreview(){
+        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+            WeixinJSBridge.invoke("imagePreview",{
+                "current": curUrl,
+                "urls":urlList
+            },function(res){
+                alert(res.err_msg);
+            });
+        }
+    }
+</script>
+
+<script>
+    var AppConfig = {
+        pkgName: "com.tencent.tmgp.vlong",
+        channelId: "21535869;000116083231353138393338",
+        minVersion: "0",
+        tag: "JIULONGZHAN"
+    };
+
+    var buttonElement = document.getElementById('download');
+    // 0-PENDING,1-DOWNLOADING,2-DOWNLOAD_SUCC,3-DOWNLOAD_FAIL,4-INSTALLED
+    var stateHandle = function(state){
+        if(state == 1){
+            $(buttonElement).addClass('ui-button_disabled').find('span').text('下载中');
+            $(buttonElement).find('.icon-loading').show();
+        }else if(state == 2){
+            $(buttonElement).addClass('ui-button_disabled').find('span').text('下载完成');
+            $(buttonElement).find('.icon-loading').hide();
+        }else if(state == 3){
+            $(buttonElement).addClass('ui-button_disabled').find('span').text('下载失败');
+            $(buttonElement).find('.icon-loading').hide();
+        }else if(state == 4){
+            $(buttonElement).addClass('ui-button_disabled').find('span').text('已安装');
+            $(buttonElement).find('.icon-loading').hide();
+        }
+    };
+    WxDownload.init({
+        appConfig: AppConfig,
+        buttonElement: buttonElement,
+        stateHandle: stateHandle
+    });
+
+    pgvMain({virtualDomain: "p.weixin.qq.com"});
+</script>
+<script type="text/javascript">window._points[3]=+new Date;// js加载完成</script>
+<script type="text/javascript">
+    setTimeout(function(){
+        Huatuo.config('flagid', '1555-1-1');
+        Huatuo.config('performid', '1555-1-2');
+        Huatuo.add(_points);
+        Huatuo.report();
+    }, 1000);
+</script>
+</body>
+</html>
