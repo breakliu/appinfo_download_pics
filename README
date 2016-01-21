@@ -1,0 +1,4 @@
+mkdir pics
+cargo build
+cargo run
+:)
