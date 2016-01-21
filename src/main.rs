@@ -16,19 +16,22 @@ fn main() {
 
     let mut count = 0;
     for path in paths {
+        // read file content
         let p = path.unwrap().path();
         let f = File::open(&p);
         let mut s = String::new();
         f.unwrap().read_to_string(&mut s);
 
-        println!("{}", p.display());
+        let file_name = format!("{}", p.display());
+        let v: Vec<&str> = file_name.split("/").collect();
+        let v: Vec<&str> = v[v.len()-1].split(".").collect();
+        let file_name = v[0];
 
         let re_imglist = Regex::new("imgList.*:.*\\[(?P<imglist>.*)\\]").unwrap();
-        //let re_url = Regex::new("\"(?P<url>.*)\"").unwrap();
         for caps in re_imglist.captures_iter(&s) {
             let imglist = caps.name("imglist").unwrap();
-            //println!("{}", imglist);
             let v: Vec<&str> = imglist.split(",").collect();
+            let mut pic_idx = 0;
             for a in v {
                 let mut img_url = a;
                 img_url = img_url.trim_matches('"');
@@ -49,14 +52,16 @@ fn main() {
                 let mut buffer = Vec::new();
                 res.read_to_end(&mut buffer).unwrap();
 
-                let mut file = match File::create("./pics/foo.jpg") {
-                    Err(why) => panic!("couldn't create {}", "./foo.jpg"),
+                let save_file_name= format!("./pics/{}_{}.jpg", file_name, pic_idx);
+                let mut file = match File::create(&save_file_name) {
+                    Err(why) => panic!("couldn't create {}", save_file_name),
                     Ok(file) => file,
                 };
                 file.write_all(&buffer);
 
-                //println!("Response: {:b}", body);
-                return;
+                println!("save file: {}", save_file_name);
+
+                pic_idx += 1;
             }
         }
     }
